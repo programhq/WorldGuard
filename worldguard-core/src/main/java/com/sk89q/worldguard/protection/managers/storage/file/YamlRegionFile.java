@@ -43,6 +43,7 @@ import com.sk89q.worldguard.protection.regions.ProtectedPolygonalRegion;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
+import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 import org.yaml.snakeyaml.parser.ParserException;
@@ -91,7 +92,7 @@ public class YamlRegionFile implements RegionDatabase {
         options.setIndent(4);
         options.setDefaultFlowStyle(FlowStyle.AUTO);
 
-        ERROR_DUMP_YAML = new Yaml(new SafeConstructor(), new Representer(), options);
+        ERROR_DUMP_YAML = new Yaml(new SafeConstructor(new LoaderOptions()), new Representer(new DumperOptions()), new DumperOptions(), new LoaderOptions());
     }
 
     /**
