@@ -195,7 +195,7 @@ class SQLRegionDatabase implements RegionDatabase {
         representer.setDefaultFlowStyle(FlowStyle.FLOW);
 
         // We have to use this in order to properly save non-string values
-        return new Yaml(new SafeConstructor(new LoaderOptions()), new Representer(), options);
+        return new Yaml(new SafeConstructor(), new Representer(), options);
     }
 
     @Override
