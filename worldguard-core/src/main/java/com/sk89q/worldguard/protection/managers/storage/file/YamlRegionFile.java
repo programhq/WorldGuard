@@ -91,7 +91,7 @@ public class YamlRegionFile implements RegionDatabase {
         options.setIndent(4);
         options.setDefaultFlowStyle(FlowStyle.AUTO);
 
-        ERROR_DUMP_YAML = new Yaml(new SafeConstructor(), new Representer(), options);
+        ERROR_DUMP_YAML = new Yaml(new SafeConstructor(new LoaderOptions()), new Representer(), options);
     }
 
     /**
